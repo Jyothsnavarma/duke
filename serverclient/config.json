@@ -1,0 +1,6 @@
+{
+  "ip": "localhost",
+  "port": 2345,
+  "buffer_size": 1024
+}
+
