@@ -1,0 +1,8 @@
+
+{
+    "bytes": 1024,
+    "server1_ip": "0.0.0.0",
+    "server1_port": 9964,
+    "server2_ip": "0.0.0.0",
+    "server2_port": 9901
+}
