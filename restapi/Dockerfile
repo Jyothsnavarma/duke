@@ -7,7 +7,7 @@ FROM python:3.8-slim
 
  
 
-ENV FLASK_APP restapi.py
+ENV FLASK_APP getapi.py
 
  
 
@@ -26,7 +26,7 @@ WORKDIR /app
 
  
 
-COPY restapi.py /app
+COPY getapi.py /app
 
  
 
