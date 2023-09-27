@@ -6,25 +6,17 @@ pipeline {
 
     environment {
 
-        DOCKERHUB_CREDENTIALS = credentials('dockerhub') // Uncomment and configure this if needed
-
-   // }
-
- 
-
+        DOCKERHUB_CREDENTIALS = credentials('dockerhub') 
+}
     stages {
 
         stage('Build') {
 
             steps {
 
-                dir('restapi') {
-
                     sh 'ls'
 
-                    sh 'docker build -t jyothsnavarma/flask:latest -f Dockerfile .'
-
-                }
+                    sh 'docker build -t jyothsnavarma/flask:latest -f restapi/Dockerfile .'
 
             }
 
