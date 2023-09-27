@@ -1,0 +1,35 @@
+
+
+ 
+
+pipeline {
+
+    agent any
+
+ 
+
+    
+
+ 
+
+    stages {
+
+        stage('Build') {
+
+            steps {
+
+                dir('serverclient') {
+
+                    sh 'ls'
+
+                    sh 'docker build -t singserver -f Dockerfile .'
+
+                }
+
+            }
+
+        }
+
+    }
+
+}
