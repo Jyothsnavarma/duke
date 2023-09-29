@@ -1,17 +1,15 @@
-# Use an official Python runtime as a parent image
-
- 
-
 FROM python:3.8-slim
 # Set environment variables for Flask
 
  
 
-ENV FLASK_APP restapi/getapi.py
+ENV FLASK_APP getapi.py
 
  
 
 ENV FLASK_RUN_HOST 0.0.0.0
+
+ 
 
 ENV FLASK_RUN_PORT 5000
 
@@ -26,7 +24,7 @@ WORKDIR /app
 
  
 
-COPY restapi/getapi.py /app
+COPY getapi.py /app
 
  
 
