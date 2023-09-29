@@ -1,27 +1,23 @@
 pipeline {
-
     agent any
-
- 
-
-    environment {
-
-        DOCKERHUB_CREDENTIALS = credentials('dockerhub') 
-}
     stages {
-
         stage('Build') {
-
             steps {
-
+                dir('restapi') {
                     sh 'ls'
-
-                    sh 'docker build -t jyothsnavarma/flask:latest -f restapi/Dockerfile .'
-
+                    sh 'docker build -t flask -f Dockerfile .'
+                }
             }
-
         }
 
-    }
+        stage('Push to Docker Hub') {
+            steps {
+                    sh "docker login -u jyothsnadevi1401@gmail.com -p Nanagaru@0114"
+                    sh 'docker tag flask jyothsnavarma/jyo:flask'
+                    sh "docker push jyothsnavarma/jyo:flask"
+                }
+            }
+        }
 
 }
+
