@@ -5,7 +5,7 @@ pipeline {
             steps {
                 dir('testdocker') {
                     sh 'ls'
-                    sh 'docker build -t socket -f Dockerfile .'
+                    sh 'docker build -t test -f Dockerfile .'
                 }
             }
         }
@@ -13,8 +13,8 @@ pipeline {
         stage('Push to Docker Hub') {
             steps {
                     sh "docker login -u jyothsnadevi1401@gmail.com -p Nanagaru@0114"
-                    sh 'docker tag flask jyothsnavarma/jyo:socket'
-                    sh "docker push jyothsnavarma/jyo:socket"
+                    sh 'docker tag test jyothsnavarma/jyo:test'
+                    sh "docker push jyothsnavarma/jyo:test"
                 }
             }
         }
