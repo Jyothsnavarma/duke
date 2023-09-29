@@ -14,9 +14,9 @@ WORKDIR /one-one_pro
 
 #Copy the current directory contents into the container at /app
 
-COPY sigserver.py /one-one_pro
+COPY server.py /one-one_pro
 
-COPY sigconfig.json /one-one_pro
+COPY config.json /one-one_pro
 
  
 
@@ -30,4 +30,4 @@ EXPOSE 8888
 
 #Define the command to run your application
 
-CMD ["python", "sigserver.py"]
+CMD ["python", "server.py"]
