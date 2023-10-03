@@ -5,7 +5,7 @@ pipeline {
             steps {
                 dir('unittestcases') {
                     sh 'ls'
-                    sh 'docker build -t unittest -f Dockerfile .'
+                    sh 'docker build -t unitcase -f Dockerfile .'
                 }
             }
         }
@@ -13,8 +13,8 @@ pipeline {
         stage('Push to Docker Hub') {
             steps {
                     sh "docker login -u jyothsnadevi1401@gmail.com -p Nanagaru@0114"
-                    sh 'docker tag unittest jyothsnavarma/jyo:unittest'
-                    sh "docker push jyothsnavarma/jyo:unittest"
+                    sh 'docker tag unitcase jyothsnavarma/jyo:unitcase'
+                    sh "docker push jyothsnavarma/jyo:unitcase"
                 }
             }
         }
