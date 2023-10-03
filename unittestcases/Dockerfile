@@ -8,8 +8,8 @@ WORKDIR /testwork
 
 
 # Copy the Python script to the container
-COPY calculation.py /unittest.txt /unittestcases.py /testwork/
+COPY calculation.py /unittest.txt /unittest.py /testwork/
 
 
 # Run the Python script when the container launches
-ENTRYPOINT ["python", "/testwork/unittestcases.py"]
+ENTRYPOINT ["python", "/testwork/unittest.py"]
