@@ -1,0 +1,22 @@
+pipeline {
+    agent any
+    stages {
+        stage('Build') {
+            steps {
+                dir('xmltojson') {
+                    sh 'ls'
+                    sh 'docker build -t xml -f Dockerfile .'
+                }
+            }
+        }
+
+        stage('Push to Docker Hub') {
+            steps {
+                    sh "docker login -u jyothsnadevi1401@gmail.com -p Nanagaru@0114"
+                    sh 'docker tag xml jyothsnavarma/jyo:xml'
+                    sh "docker push jyothsnavarma/jyo:xml"
+                }
+            }
+        }
+
+}
