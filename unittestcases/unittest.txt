@@ -1,0 +1,13 @@
+addition, 2, 3, 5
+addition, -1, 1, 0
+addition, 0, 0, 0
+subtraction, 5, 3, 2
+subtraction, 0, 0, 0
+subtraction, -1, -2, 1
+multiplication, 2, 3, 6
+multiplication, 0, 5, 0
+multiplication, -2, 4, -8
+division, 6, 2, 3
+division, 0, 5, 0
+division, -8, 4, -2
+division, 4, 0, connot divided by zero
