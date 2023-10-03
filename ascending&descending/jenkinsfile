@@ -1,0 +1,22 @@
+pipeline {
+    agent any
+    stages {
+        stage('Build') {
+            steps {
+                dir('ascending&descending') {
+                    sh 'ls'
+                    sh 'docker build -t order -f Dockerfile .'
+                }
+            }
+        }
+
+        stage('Push to Docker Hub') {
+            steps {
+                    sh "docker login -u jyothsnadevi1401@gmail.com -p Nanagaru@0114"
+                    sh 'docker tag order jyothsnavarma/jyo:order'
+                    sh "docker push jyothsnavarma/jyo:order"
+                }
+            }
+        }
+
+}
