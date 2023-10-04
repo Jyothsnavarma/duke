@@ -70,7 +70,7 @@ pipeline {
 
                             sudo docker pull jyothsnavarma/jyo:calculator
 
-                            sudo docker run -d -p 5000:5000 --name jyothsnavarma/jyo:calculator
+                            sudo docker run -d -p 5000:5000  jyothsnavarma/jyo:calculator
 
                             
 
