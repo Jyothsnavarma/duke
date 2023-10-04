@@ -68,9 +68,9 @@ pipeline {
 
                             sudo docker login -u jyothsnadevi1401@gmail.com -p 'Nanagaru@0114>>'
 
-                            sudo docker pull jyothsnavarma/jyo:cal
+                            sudo docker pull jyothsnavarma/jyo:calculator
 
-                            sudo docker run -d -p 5000:5000 --name cal jyothsnavarma/jyo:cal
+                            sudo docker run -d -p 5000:5000 --name jyothsnavarma/jyo:calculator
 
                             
 
