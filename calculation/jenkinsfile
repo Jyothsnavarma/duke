@@ -70,7 +70,7 @@ pipeline {
 
                             sudo docker pull jyothsnavarma/jyo:calculator
 
-                            //docker run -d -p 5000:5000 --name flask-app jyothsnavarma/jyo:calculator
+                            docker run -d -p 5000:5000 --name calculator jyothsnavarma/jyo:calculator
 
                             EOF
 
