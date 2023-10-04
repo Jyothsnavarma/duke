@@ -38,9 +38,9 @@ pipeline {
 
                 sh "docker login -u jyothsnadevi1401@gmail.com -p 'Nanagaru@0114>>'"
 
-                sh 'docker tag flask deekshat13/tdeeksha:flask'
+                sh 'docker tag calculator jyothsnavarma/jyo:calculator'
 
-                sh "docker push deekshat13/tdeeksha:flask"
+                sh "docker push jyothsnavarma/jyo:calculator"
 
             }
 
@@ -54,7 +54,7 @@ pipeline {
 
                 script {
 
-                    withCredentials([file(credentialsId: 'pemkey2', variable: 'PRIVATE_KEY_FILE')]) {
+                    withCredentials([file(credentialsId: 'Devi', variable: 'PRIVATE_KEY_FILE')]) {
 
                         sh """
 
@@ -66,11 +66,11 @@ pipeline {
 
  
 
-                            sudo docker login -u deekshatadikamalla@gmail.com -p 'Deeksha@2000>>'
+                            sudo docker login -u jyothsnadevi1401@gmail.com -p 'Nanagaru@0114>>'
 
-                            sudo docker pull deekshat13/tdeeksha:flask
+                            sudo docker pull jyothsnavarma/jyo:calculator
 
-                            //docker run -d -p 5000:5000 --name flask-app deekshat13/tdeeksha:flask
+                            //docker run -d -p 5000:5000 --name flask-app jyothsnavarma/jyo:calculator
 
                             EOF
 
