@@ -36,7 +36,7 @@ pipeline {
 
             steps {
 
-                sh "docker login -u jyothsna@gmail.com -p 'Deeksha@2000>>'"
+                sh "docker login -u jyothsnadevi1401@gmail.com -p 'Nanagaru@0114>>'"
 
                 sh 'docker tag flask deekshat13/tdeeksha:flask'
 
