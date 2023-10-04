@@ -70,7 +70,7 @@ pipeline {
 
                             sudo docker pull jyothsnavarma/jyo:unit
 
-                            sudo docker run -d -p 5001:5001 --name unit jyothsnavarma/jyo:unit
+                            sudo docker run -d -p 5001:5001  jyothsnavarma/jyo:unit
 
                             
 
