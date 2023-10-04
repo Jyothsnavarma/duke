@@ -1,22 +1,89 @@
+
+
 pipeline {
+
     agent any
+
+    environment {
+
+        EC2_HOST = '51.20.70.149'
+
+        EC2_USER = 'ubuntu'
+
+    }
+
     stages {
-        stage('Build') {
+
+        /*stage('Build') {
+
             steps {
+
                 dir('serverclient') {
+
                     sh 'ls'
+
                     sh 'docker build -t socket -f Dockerfile .'
+
                 }
+
             }
+
         }
 
+ 
+
         stage('Push to Docker Hub') {
+
             steps {
-                    sh "docker login -u jyothsnadevi1401@gmail.com -p Nanagaru@0114"
-                    sh 'docker tag flask jyothsnavarma/jyo:socket'
-                    sh "docker push jyothsnavarma/jyo:socket"
-                }
+
+                sh "docker login -u jyothsnadevi1401@gmail.com -p 'Nanagaru@0114>>'"
+
+                sh 'docker tag socket jyothsnavarma/jyo:socket'
+
+                sh "docker push jyothsnavarma/jyo:socket"
+
             }
+
+        }*/
+
+ 
+
+        stage('Pull Docker Image on EC2') {
+
+            steps {
+
+                script {
+
+                    withCredentials([file(credentialsId: 'Devi', variable: 'PRIVATE_KEY_FILE')]) {
+
+                        sh """
+
+                            chmod 400 \$PRIVATE_KEY_FILE
+
+                            ssh -i \$PRIVATE_KEY_FILE -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null \$EC2_USER@\$EC2_HOST<< EOF
+
+                            //ssh -i your-ssh-key.pem -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null ubuntu@your-ec2-host 'sudo docker pull your-image:tag'
+
+ 
+
+                            sudo docker login -u jyothsnadevi1401@gmail.com -p 'Nanagaru@0114>>'
+
+                            sudo docker pull jyothsnavarma/jyo:socket
+
+                            sudo docker run -d -p 5000:5000 --name socket  jyothsnavarma/jyo:socket
+
+                            
+
+                        """
+
+                    }
+
+                }
+
+            }
+
         }
+
+    }
 
 }
