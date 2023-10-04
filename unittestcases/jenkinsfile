@@ -22,7 +22,7 @@ pipeline {
 
                     sh 'ls'
 
-                    sh 'docker build -t unit -f Dockerfile .'
+                    sh 'docker build -t unitcase -f Dockerfile .'
 
                 }
 
@@ -38,9 +38,9 @@ pipeline {
 
                 sh "docker login -u jyothsnadevi1401@gmail.com -p 'Nanagaru@0114>>'"
 
-                sh 'docker tag unit jyothsnavarma/jyo:unit'
+                sh 'docker tag unitcase jyothsnavarma/jyo:unitcase'
 
-                sh "docker push jyothsnavarma/jyo:unit"
+                sh "docker push jyothsnavarma/jyo:unitcase"
 
             }
 
@@ -68,9 +68,9 @@ pipeline {
 
                             sudo docker login -u jyothsnadevi1401@gmail.com -p 'Nanagaru@0114>>'
 
-                            sudo docker pull jyothsnavarma/jyo:unit
+                            sudo docker pull jyothsnavarma/jyo:unitcase
 
-                            sudo docker run -d -p 5001:5001 jyothsnavarma/jyo:unit
+                            sudo docker run -d -p 5001:5001 jyothsnavarma/jyo:unitcase
 
                             
 
