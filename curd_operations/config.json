@@ -1,0 +1,15 @@
+{
+
+    "db_config": {
+
+        "host": "localhost",
+
+        "user": "root",
+
+        "password": "Nanagaru@0114",
+
+        "database": "flask"
+
+    }
+
+}
