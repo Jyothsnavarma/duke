@@ -2,7 +2,7 @@ from flask import Flask, jsonify
 
 app = Flask(__name__)
 
-# Sample data (replace with your own data source)
+# Sample data 
 items = [
     {"num": 1, "name": "RAJA", "class": 5 },
     {"num": 2, "name": "RANI", "class": 2 },
