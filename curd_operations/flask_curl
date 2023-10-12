@@ -1,5 +1,5 @@
 from flask import Flask, request, jsonify
-from db_operations import get_employees, get_employee, add_employee, update_employee, delete_employee
+from db import get_employees, get_employee, add_employee, update_employee, delete_employee
 
 app = Flask(__name__)
 
