@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mini Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        h1 {
+            text-align: center;
+        }
+        form {
+            max-width: 300px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input[type="text"], select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+        input[type="submit"] {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+        .result-label {
+            background-color: #f0f0f0;  /* Background color for the result label */
+            padding: 10px;
+            margin-top: 10px;
+            border: 1px solid #ddd;  /* Border for the result label */
+            border-radius: 5px;  /* Rounded corners for the result label */
+            font-weight: bold;  /* Bold text for the result label */
+            text-align: center;  /* Center the text within the label */
+        }
+    </style>
+</head>
+<body>
+    <h1>Mini Calculator</h1>
+    <form method="POST">
+        <label for="a">A:</label>
+        <input type="text" name="a" id="a" required>
+        <label for="b">B:</label>
+        <input type="text" name="b" id="b" required>
+        <label for="operation">Operation:</label>
+        <select name="operation" id="operation">
+            <option value="add">Add</option>
+            <option value="subtract">Subtract</option>
+            <option value="multiply">Multiply</option>
+            <option value="divide">Divide</option>
+        </select>
+        <input type="submit" value="Calculate">
+    </form>
+    {% if result is defined %}
+        <label class="result-label">Result: {{ result }}</label>
+    {% endif %}
+</body>
+</html>
